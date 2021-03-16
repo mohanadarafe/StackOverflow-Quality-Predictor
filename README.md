@@ -26,6 +26,7 @@ Experiments with the classifier:
 
 Since we will implement all of this twice, once in Dask & once in Spark (if we have time in plain python also). We can compare using graphs the runtime performance for each technology. For the models used, we will implement a Naive Bayes classifier. Also a note since we will be implementing the Naive Bayes Classifier we will only leverage sklearn to evaluate the performance such as accuracy, recall & precision.
 
+
 ## Citations
 [1] Tóth, László & Nagy, Balázs & Janthó, Dávid & Vidacs, Laszlo & Gyimóthy, Tibor. (2019). Towards an Accurate Prediction of the Question Quality on Stack Overflow Using a Deep-Learning-Based NLP Approach. 10.5220/0007971306310639. 
 
