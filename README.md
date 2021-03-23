@@ -1,5 +1,13 @@
 # Stack Overflow Quality Predictor
 
+## Setup
+In order to run the code, make sure you have Conda installed in your machine in order to use our environment. From there, run the following commands
+
+```
+conda env create --name stack --file=environment.yml
+conda activate stack
+```
+
 ## Abstract
 StackOverflow is every developer's best friend. There are millions of users actively asking their questions, unfortunately, some questions are better than others. How can StackOverflow find a way to filter good questions from bad questions & perhaps suggest users to re-formulate a question before submission. Using big data analytics & machine learning, this project will find a solution to distinguish high quality & low quality questions. Also, we will be comparing big data technologies & study their performance with the same dataset. We will explore if certain big data technologies are more performing than others based on various metrics such as time & output produced. 
 
