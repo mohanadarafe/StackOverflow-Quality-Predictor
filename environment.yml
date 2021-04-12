@@ -5,4 +5,7 @@ dependencies:
 - python>=3.7
 - pyspark
 - dask
+- dask-ml
 - nltk
+- pandas
+- scikit-learn
