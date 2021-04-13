@@ -1,0 +1,496 @@
+##########################################
+############# Start Spark ################
+##########################################
+--------- BEFORE CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+Memory in use: 5.61GiB
+Time on CPU: 1 day, 4:16:35.890000
+Disk free: 0.36GiB
+CPU in use: 6.30%
+Disk in use: 96.60%
+
+
+ --------- AFTER CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+Memory in use: 5.50GiB
+Time on CPU: 1 day, 4:16:46.760000
+Disk free: 0.36GiB
+CPU in use: 2.40%
+Disk in use: 96.60%
+
+----------> Execution Time: 5.233021974563599
+
+#########################################
+####### Load dataset in spark rdd #######
+###########################################
+--------- BEFORE CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+Memory in use: 5.50GiB
+Time on CPU: 1 day, 4:16:46.760000
+Disk free: 0.36GiB
+CPU in use: 0.00%
+Disk in use: 96.60%
+
+
+ --------- AFTER CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+Memory in use: 5.53GiB
+Time on CPU: 1 day, 4:17:00.690000
+Disk free: 0.36GiB
+CPU in use: 16.30%
+Disk in use: 96.60%
+
+----------> Execution Time: 5.2031450271606445
+
+#########################################
+########## Transform rdd to df ############
+##########################################
+--------- BEFORE CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+Memory in use: 5.53GiB
+Time on CPU: 1 day, 4:17:00.690000
+Disk free: 0.36GiB
+CPU in use: 0.00%
+Disk in use: 96.60%
+
+
+ --------- AFTER CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+Memory in use: 5.55GiB
+Time on CPU: 1 day, 4:17:05.610000
+Disk free: 0.36GiB
+CPU in use: 14.10%
+Disk in use: 96.60%
+
+----------> Execution Time: 2.281919002532959
+
+##########################################
+########## Create Heuristics #############
+##########################################
+--------- BEFORE CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+Memory in use: 5.55GiB
+Time on CPU: 1 day, 4:17:05.610000
+Disk free: 0.36GiB
+CPU in use: 0.00%
+Disk in use: 96.60%
+
+
+ --------- AFTER CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+Memory in use: 5.55GiB
+Time on CPU: 1 day, 4:17:05.610000
+Disk free: 0.36GiB
+CPU in use: 0.00%
+Disk in use: 96.60%
+
+----------> Execution Time: 0.1061699390411377
+--------- BEFORE CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+Memory in use: 5.55GiB
+Time on CPU: 1 day, 4:17:06.070000
+Disk free: 0.36GiB
+CPU in use: 14.10%
+Disk in use: 96.60%
+
+
+ --------- AFTER CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+Memory in use: 5.55GiB
+Time on CPU: 1 day, 4:17:06.260000
+Disk free: 0.36GiB
+CPU in use: 18.10%
+Disk in use: 96.60%
+
+----------> Execution Time: 0.024396896362304688
+--------- BEFORE CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+Memory in use: 5.55GiB
+Time on CPU: 1 day, 4:17:06.260000
+Disk free: 0.36GiB
+CPU in use: 0.00%
+Disk in use: 96.60%
+
+
+ --------- AFTER CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+Memory in use: 5.55GiB
+Time on CPU: 1 day, 4:17:06.260000
+Disk free: 0.36GiB
+CPU in use: 0.00%
+Disk in use: 96.60%
+
+----------> Execution Time: 0.00934290885925293
+
+##########################################
+############ Construct pipeline ############
+############################################
+--------- BEFORE CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+Memory in use: 5.55GiB
+Time on CPU: 1 day, 4:17:06.260000
+Disk free: 0.36GiB
+CPU in use: 0.00%
+Disk in use: 96.60%
+
+
+ --------- AFTER CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+Memory in use: 5.55GiB
+Time on CPU: 1 day, 4:17:06.260000
+Disk free: 0.36GiB
+CPU in use: 0.00%
+Disk in use: 96.60%
+
+----------> Execution Time: 0.0004291534423828125
+
+##########################################
+########### Train pipeline model ###########
+############################################
+--------- BEFORE CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+Memory in use: 5.55GiB
+Time on CPU: 1 day, 4:17:06.260000
+Disk free: 0.36GiB
+CPU in use: 0.00%
+Disk in use: 96.60%
+
+
+ --------- AFTER CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+Memory in use: 5.56GiB
+Time on CPU: 1 day, 4:17:58.400000
+Disk free: 0.36GiB
+CPU in use: 9.80%
+Disk in use: 96.70%
+
+----------> Execution Time: 19.58013105392456
+
+
+ ********* PROCESS INFO *********
+
+Memory_usage: 0.06 GiB
+Create time: 2021-04-13 10:06:54
+Current time: 2021-04-13 10:07:28
+Process name: python3.5
+Memory in use: 0.35%
+Uptime: 0:00:34.646756
+PID: 7282
+CPU in use: 0.00%
+Time on CPU: 0:00:00.952277
+Nb of threads: 2
+
+
+ ********* PROCESS INFO *********
+
+Memory_usage: 0.75 GiB
+Create time: 2021-04-13 10:06:54
+Current time: 2021-04-13 10:07:28
+Process name: java
+Memory in use: 4.69%
+Uptime: 0:00:34.021659
+PID: 7287
+CPU in use: 0.00%
+Time on CPU: 0:00:48.867504
+Nb of threads: 135
+
+
+ ********* PROCESS INFO *********
+
+Memory_usage: 0.03 GiB
+Create time: 2021-04-13 10:07:06
+Current time: 2021-04-13 10:07:28
+Process name: python3.5
+Memory in use: 0.22%
+Uptime: 0:00:21.887645
+PID: 7298
+CPU in use: 0.00%
+Time on CPU: 0:00:00.513505
+Nb of threads: 1
+
+
+ ********* PROCESS INFO *********
+
+Memory_usage: 0.03 GiB
+Create time: 2021-04-13 10:07:09
+Current time: 2021-04-13 10:07:28
+Process name: python3.5
+Memory in use: 0.19%
+Uptime: 0:00:19.103792
+PID: 7301
+CPU in use: 0.00%
+Time on CPU: 0:00:14.075444
+Nb of threads: 1
+
+#############################################
+####### Transform train data through pipeline #####
+################################################
+--------- BEFORE CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+Memory in use: 5.56GiB
+Time on CPU: 1 day, 4:17:58.520000
+Disk free: 0.36GiB
+CPU in use: 0.00%
+Disk in use: 96.70%
+
+
+ --------- AFTER CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+Memory in use: 5.55GiB
+Time on CPU: 1 day, 4:17:58.520000
+Disk free: 0.36GiB
+CPU in use: 0.00%
+Disk in use: 96.70%
+
+----------> Execution Time: 0.27005910873413086
+
+##################################################
+####### Transform test data through pipeline #######
+##################################################
+--------- BEFORE CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+Memory in use: 5.55GiB
+Time on CPU: 1 day, 4:17:58.520000
+Disk free: 0.36GiB
+CPU in use: 0.00%
+Disk in use: 96.70%
+
+
+ --------- AFTER CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+Memory in use: 5.55GiB
+Time on CPU: 1 day, 4:17:58.520000
+Disk free: 0.36GiB
+CPU in use: 0.00%
+Disk in use: 96.70%
+
+----------> Execution Time: 0.12813687324523926
+
+###################################################
+####### Train naive base classifier model #######
+####################################################
+--------- BEFORE CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+Memory in use: 5.55GiB
+Time on CPU: 1 day, 4:17:59.880000
+Disk free: 0.36GiB
+CPU in use: 18.80%
+Disk in use: 96.70%
+
+
+ --------- AFTER CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+Memory in use: 5.56GiB
+Time on CPU: 1 day, 4:17:59.940000
+Disk free: 0.36GiB
+CPU in use: 0.00%
+Disk in use: 96.70%
+
+----------> Execution Time: 0.04271411895751953
+--------- BEFORE CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+Memory in use: 5.56GiB
+Time on CPU: 1 day, 4:17:59.940000
+Disk free: 0.36GiB
+CPU in use: 0.00%
+Disk in use: 96.70%
+
+
+ --------- AFTER CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+Memory in use: 5.40GiB
+Time on CPU: 1 day, 4:21:58.930000
+Disk free: 0.35GiB
+CPU in use: 10.50%
+Disk in use: 96.70%
+
+----------> Execution Time: 93.07906293869019
+
+##############################################################
+### Predict test data using naive base classifier model ######
+################################################################
+--------- BEFORE CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+Memory in use: 5.40GiB
+Time on CPU: 1 day, 4:21:58.990000
+Disk free: 0.35GiB
+CPU in use: 7.50%
+Disk in use: 96.70%
+
+
+ --------- AFTER CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+Memory in use: 5.40GiB
+Time on CPU: 1 day, 4:21:58.990000
+Disk free: 0.35GiB
+CPU in use: 0.00%
+Disk in use: 96.70%
+
+----------> Execution Time: 0.03961992263793945
+####################################
+####### Evaluate predictions #######
+#####################################
+--------- BEFORE CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+Memory in use: 5.40GiB
+Time on CPU: 1 day, 4:21:58.990000
+Disk free: 0.35GiB
+CPU in use: 0.00%
+Disk in use: 96.70%
+
+******** Metrics **********
+Model Accuracy: 78.227%
+Model f1-score: 78.464%
+Model weightedPrecision: 80.089%
+Model weightedRecall: 78.227%
+
+
+ --------- AFTER CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+Memory in use: 5.64GiB
+Time on CPU: 1 day, 4:23:16.760000
+Disk free: 0.35GiB
+CPU in use: 50.60%
+Disk in use: 96.70%
+
+----------> Execution Time: 28.263744831085205
+
+
+ ********* PROCESS INFO *********
+
+Memory_usage: 0.05 GiB
+Create time: 2021-04-13 10:06:54
+Current time: 2021-04-13 10:09:31
+Process name: python3.5
+Memory in use: 0.33%
+Uptime: 0:02:37.813160
+PID: 7282
+CPU in use: 0.70%
+Time on CPU: 0:00:01.813382
+Nb of threads: 6
+
+
+ ********* PROCESS INFO *********
+
+Memory_usage: 1.32 GiB
+Create time: 2021-04-13 10:06:54
+Current time: 2021-04-13 10:09:31
+Process name: java
+Memory in use: 8.22%
+Uptime: 0:02:37.188136
+PID: 7287
+CPU in use: 136.00%
+Time on CPU: 0:03:36.372096
+Nb of threads: 275
+
+
+ ********* PROCESS INFO *********
+
+Memory_usage: 0.03 GiB
+Create time: 2021-04-13 10:07:06
+Current time: 2021-04-13 10:09:31
+Process name: python3.5
+Memory in use: 0.17%
+Uptime: 0:02:25.054164
+PID: 7298
+CPU in use: 0.00%
+Time on CPU: 0:00:00.520200
+Nb of threads: 1
+
+
+ ********* PROCESS INFO *********
+
+Memory_usage: 0.03 GiB
+Create time: 2021-04-13 10:08:54
+Current time: 2021-04-13 10:09:31
+Process name: python3.5
+Memory in use: 0.18%
+Uptime: 0:00:36.957953
+PID: 7306
+CPU in use: 0.00%
+Time on CPU: 0:00:31.532104
+Nb of threads: 1
