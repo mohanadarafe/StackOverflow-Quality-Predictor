@@ -64,18 +64,18 @@ def metrics(fun):
         print('\n\n --------- AFTER CALL TO FUNCTION ---------')
         info_after_call = system_info()
         #         process_info()
-        system_dict = {fun_name: [info_before_call, info_after_call]}
+        system_dict = {fun_name: [info_before_call, info_after_call, duration]}
         # with open('system_info.json', 'a') as fp:
         #     json.dump(system_dict, fp, default=str)
         #     fp.write(',')
+
+        print("\n----------> Execution Time: {:.5f} seconds".format(duration))
 
         with open("system_info.json", "r+") as file:
             data = json.load(file)
             data.update(system_dict)
             file.seek(0)
             json.dump(data, file, default=str)
-
-        print("\n----------> Execution Time: {}".format(duration))
         return rv
 
     return wrapper
