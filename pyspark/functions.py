@@ -10,7 +10,7 @@ from pyspark.ml.tuning import ParamGridBuilder, CrossValidator
 from utility import *
 
 
-# Initialize a spark session.
+
 @metrics
 def init_spark():
     global spark
@@ -89,7 +89,7 @@ def get_best_smoothing_values(target_col, prediction_col):
     # Create grid to find best smoothing
     nb = NaiveBayes(smoothing=1.0, modelType="multinomial")
     paramGrid = ParamGridBuilder().addGrid(nb.smoothing, [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]).build()
-#     cvEvaluator = BinaryClassificationEvaluator(rawPredictionCol=prediction_col)
+
     cvEvaluator = MulticlassClassificationEvaluator(labelCol=target_col, predictionCol=prediction_col)
 
     # Cross-validate all smoothing values
@@ -111,15 +111,14 @@ def predict(model, data):
 
 @metrics
 def evaluate_model(target_col, prediction_col, predictionAndTarget):
-#     evaluator = BinaryClassificationEvaluator(rawPredictionCol=prediction_col)
     evaluatorMulti = MulticlassClassificationEvaluator(labelCol=target_col, predictionCol=prediction_col)
-#     accuracy = evaluatorMulti.evaluate(predictions)
+
     # Get metrics
     acc = evaluatorMulti.evaluate(predictionAndTarget, {evaluatorMulti.metricName: "accuracy"})
     f1 = evaluatorMulti.evaluate(predictionAndTarget, {evaluatorMulti.metricName: "f1"})
     weightedPrecision = evaluatorMulti.evaluate(predictionAndTarget, {evaluatorMulti.metricName: "weightedPrecision"})
     weightedRecall = evaluatorMulti.evaluate(predictionAndTarget, {evaluatorMulti.metricName: "weightedRecall"})
-#     auc = evaluator.evaluate(predictionAndTarget)
+
     print("\n******** Metrics **********")
     print ("Model Accuracy: {:.3f}%".format(acc*100))
     print ("Model f1-score: {:.3f}%".format(f1*100))
