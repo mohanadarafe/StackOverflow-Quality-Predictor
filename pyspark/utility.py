@@ -26,7 +26,7 @@ def process_info():
     for process in psu.process_iter(attrs=(
             'name', 'cmdline', 'pid', 'create_time', 'cpu_percent', 'cpu_times', 'num_threads', 'memory_percent')):
 
-        if process.info["name"] is not None and ("python3.5" in process.info["name"] or "java" in process.info["name"]):
+        if process.info["name"] is not None and ("python" in process.info["name"] or "java" in process.info["name"]):
             mem = process.info['memory_percent']
             info = {
                 "PID": process.info["pid"],
