@@ -22,13 +22,15 @@ def init_spark():
     return spark
 
 @metrics
-def load_train_test_rdd(filename_train, filename_test):
+def load_data(filename_train, filename_test):
+    """ Load data in rdd """
     train_rdd = spark.read.csv(filename_train, header=True, multiLine=True, inferSchema=True, escape='"', quote='"')
     test_rdd = spark.read.csv(filename_test, header=True, multiLine=True, inferSchema=True, escape='"', quote='"')
     return train_rdd, test_rdd
 
 @metrics
-def transform_rdd_to_df(train_rdd,test_rdd):
+def clean_data(train_rdd,test_rdd):
+    """ Filter rdd and convert to dataframe """
     training = train_rdd.rdd \
     .map(lambda x: (x["Title"]+" "+x["Body"], x["Y"])) \
     .toDF(["Question", "Output"])
@@ -44,7 +46,8 @@ def get_stop_word_remover(input_col_name, stopwords):
 
 
 @metrics
-def get_heuristics(stop_word_file):
+def preprocess_data(stop_word_file):
+    """ get heuristics """
     # HEURISTIC 1 - Tokenize the words
     regexTokenizer = RegexTokenizer(inputCol="Question", outputCol="words", pattern="\\W")
     
@@ -59,23 +62,27 @@ def get_heuristics(stop_word_file):
 
 
 @metrics
-def get_bag_of_word_model(features_col_name, label_col_name):
+def init_bow(features_col_name, label_col_name):
+    """ initialize bag of word model """
     countVectors = CountVectorizer(inputCol=features_col_name, outputCol="features")
     indexed_features = StringIndexer(inputCol = label_col_name, outputCol = "label")
     return countVectors, indexed_features
 
-@metrics
+
 def get_pipeline(*args):
     return Pipeline(stages=[*args])
 
 
 @metrics
-def get_pipeline_model(pipeline, data):
-    """ We should use the same pipeline model on training and testing """
+def build_bow(pipeline, data):
+    """ We should use the same pipeline model on training and testing 
+        Buildng pipeline model where we have the bow 
+    """ 
     return pipeline.fit(data)
 
 @metrics
-def transform_data_through_pipeline(model, data):
+def transform_bow(model, data):
+    """transform_data_through_pipeline"""
     data_transformed = model.transform(data)
     return data_transformed
 
@@ -84,8 +91,8 @@ def split_dataset(data, distribution):
     return data.randomSplit([distribution, 1-distribution], seed = 1234)
 
 
-@metrics
-def get_best_smoothing_values(target_col, prediction_col):
+def hypertune(target_col, prediction_col):
+    """get_best_smoothing_values"""
     # Create grid to find best smoothing
     nb = NaiveBayes(smoothing=1.0, modelType="multinomial")
     paramGrid = ParamGridBuilder().addGrid(nb.smoothing, [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]).build()
@@ -98,7 +105,8 @@ def get_best_smoothing_values(target_col, prediction_col):
 
 
 @metrics
-def train_naive_bayes_model(cv, data):
+def train(cv, data):
+    """ train_naive_bayes_model """
     model = cv.fit(data)
     return model
 
@@ -110,7 +118,7 @@ def predict(model, data):
 
 
 @metrics
-def evaluate_model(target_col, prediction_col, predictionAndTarget):
+def evaluate(target_col, prediction_col, predictionAndTarget):
     evaluatorMulti = MulticlassClassificationEvaluator(labelCol=target_col, predictionCol=prediction_col)
 
     # Get metrics
@@ -139,39 +147,37 @@ def main_spark():
     print("\n#########################################")
     print("####### Load dataset in spark rdd #######")
     print("###########################################")
-    train_rdd, test_rdd = load_train_test_rdd(filename_train, filename_test)
+    train_rdd, test_rdd = load_data(filename_train, filename_test)
     print("\n#########################################")
     print("########## Transform rdd to df ############")
     print("##########################################")
-    train_df, test_df = transform_rdd_to_df(train_rdd,test_rdd)
+    train_df, test_df = clean_data(train_rdd,test_rdd)
     print("\n##########################################")
     print("########## Create Heuristics #############")
     print("##########################################")
-    regexTokenizer, stopwordsRemover = get_heuristics(stop_word_file)
-    countVectors_h1, indexed_features_h1 = get_bag_of_word_model("words", "Output")
-    countVectors_h2, indexed_features_h2 = get_bag_of_word_model("filtered", "Output")
+    regexTokenizer, stopwordsRemover = preprocess_data(stop_word_file)
+    countVectors, indexed_features = init_bow("filtered", "Output")
     print("\n##########################################")
     print("############ Construct pipeline ############")
     print("############################################")
-    pipeline = get_pipeline(regexTokenizer, stopwordsRemover, countVectors_h2, indexed_features_h2)
+    pipeline = get_pipeline(regexTokenizer, stopwordsRemover, countVectors, indexed_features)
     print("\n##########################################")
     print("########### Train pipeline model ###########")
     print("############################################")
-    model_pipeline = get_pipeline_model(pipeline, train_df)
-    process_info()
+    model_pipeline = build_bow(pipeline, train_df)
     print("\n#############################################")
     print("####### Transform train data through pipeline #####")
     print("################################################")
-    train = transform_data_through_pipeline(model_pipeline, train_df)
+    train_data = transform_bow(model_pipeline, train_df)
     print("\n##################################################")
     print("####### Transform test data through pipeline #######")
     print("##################################################")
-    test = transform_data_through_pipeline(model_pipeline, test_df)
+    test = transform_bow(model_pipeline, test_df)
     print("\n###################################################")
     print("####### Train naive base classifier model #######")
     print("####################################################")
-    cv = get_best_smoothing_values("label", "prediction")
-    nb_model = train_naive_bayes_model(cv,train)
+    cv = hypertune("label", "prediction")
+    nb_model = train(cv,train_data)
     print("\n##############################################################")
     print("### Predict test data using naive base classifier model ######")
     print("################################################################")
@@ -179,7 +185,10 @@ def main_spark():
     print("####################################")
     print("####### Evaluate predictions #######")
     print("#####################################")
-    evaluate_model("label", "prediction",predictions.select("label","prediction"))
+    evaluate("label", "prediction",predictions.select("label","prediction"))
+    print('\n\n(((((((((((((PROCESSES)))))))))))))))')
+    process_info()
+    print('((((((((((((((((())))))))))))))))))))')
 
 
 
