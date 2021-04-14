@@ -169,6 +169,7 @@ def main_spark():
     print("####### Transform train data through pipeline #####")
     print("################################################")
     train_data = transform_bow(model_pipeline, train_df)
+    process_info()
     print("\n##################################################")
     print("####### Transform test data through pipeline #######")
     print("##################################################")
