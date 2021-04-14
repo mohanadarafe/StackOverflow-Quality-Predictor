@@ -9,3 +9,4 @@ dependencies:
 - nltk
 - pandas
 - scikit-learn
+- matplotlib
