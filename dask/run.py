@@ -112,6 +112,7 @@ train_df, test_df = load_data(filename_train, filename_test)
 
 print("###############CLEANING DATA###############")
 training, testing = clean_data(train_df, test_df)
+process_info()
 
 print("###############PREPROCESSING DATA###############")
 preprocess_data(training, testing)
@@ -121,5 +122,4 @@ X_train, y_train, Xtest, y_test = build_bow_model(training, testing)
 
 print("###############TRAINING DATA###############")
 clf = train_model(X_train, y_train)
-
 process_info()

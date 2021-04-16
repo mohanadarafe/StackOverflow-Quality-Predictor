@@ -187,9 +187,9 @@ def main_spark():
     print("####### Evaluate predictions #######")
     print("#####################################")
     evaluate("label", "prediction",predictions.select("label","prediction"))
-#     print('\n\n(((((((((((((PROCESSES)))))))))))))))')
-#     process_info()
-#     print('((((((((((((((((())))))))))))))))))))')
+    # print('\n\n(((((((((((((PROCESSES)))))))))))))))')
+    # process_info()
+    # print('((((((((((((((((())))))))))))))))))))')
 
 
 
