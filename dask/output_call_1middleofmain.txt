@@ -1,0 +1,134 @@
+###############LOADING DATA###############
+--------- BEFORE CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+CPU in use: 17.30%
+Memory in use: 4.96GiB
+Disk in use: 95.80%
+Disk free: 0.46GiB
+
+
+ --------- AFTER CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+CPU in use: 8.50%
+Memory in use: 4.95GiB
+Disk in use: 95.80%
+Disk free: 0.46GiB
+
+----------> Execution Time: 1.15883 seconds
+###############CLEANING DATA###############
+--------- BEFORE CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+CPU in use: 0.00%
+Memory in use: 4.95GiB
+Disk in use: 95.80%
+Disk free: 0.46GiB
+
+
+ --------- AFTER CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+CPU in use: 0.00%
+Memory in use: 4.95GiB
+Disk in use: 95.80%
+Disk free: 0.46GiB
+
+----------> Execution Time: 0.05049 seconds
+###############PREPROCESSING DATA###############
+--------- BEFORE CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+CPU in use: 0.00%
+Memory in use: 4.95GiB
+Disk in use: 95.80%
+Disk free: 0.46GiB
+
+
+ --------- AFTER CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+CPU in use: 0.00%
+Memory in use: 4.95GiB
+Disk in use: 95.80%
+Disk free: 0.46GiB
+
+----------> Execution Time: 0.09615 seconds
+
+
+ ********* PROCESS INFO *********
+
+PID: 21882
+Process name: python3.6
+Current time: 2021-04-15 20:36:28
+Create time: 2021-04-15 20:36:10
+Uptime: 0:00:17.739575
+CPU in use: 0.00%
+Time on CPU: 0:00:03.758353
+Nb of threads: 12
+Memory in use: 2.14%
+Memory_usage: 0.34 GiB
+###############BUILDING BOW###############
+--------- BEFORE CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+CPU in use: 0.00%
+Memory in use: 4.95GiB
+Disk in use: 95.80%
+Disk free: 0.46GiB
+Converting to Dask Databags...
+Building BoW...
+Indexing strings...
+Computing chunks...
+Re-convert to Dask Array
+
+
+ --------- AFTER CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+CPU in use: 7.10%
+Memory in use: 5.31GiB
+Disk in use: 95.70%
+Disk free: 0.46GiB
+
+----------> Execution Time: 202.06392 seconds
+###############TRAINING DATA###############
+--------- BEFORE CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+CPU in use: 3.70%
+Memory in use: 5.31GiB
+Disk in use: 95.70%
+Disk free: 0.46GiB
+
+
+ --------- AFTER CALL TO FUNCTION ---------
+
+
+ ========== SYSTEM INFO ===========
+
+CPU in use: 8.50%
+Memory in use: 5.30GiB
+Disk in use: 95.70%
+Disk free: 0.46GiB
+
+----------> Execution Time: 23.09264 seconds
