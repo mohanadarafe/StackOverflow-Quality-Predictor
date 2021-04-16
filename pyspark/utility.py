@@ -9,7 +9,7 @@ import json
 def system_info():
     info = {
         "CPU in use": "{:.2f}%".format(psu.cpu_percent(interval=.1)),
-        "Time on CPU": timedelta(seconds=psu.cpu_times().system + psu.cpu_times().user),
+        # "Time on CPU": timedelta(seconds=psu.cpu_times().system + psu.cpu_times().user),
         "Memory in use": "{:.2f}GiB".format(psu.virtual_memory().available / (1024 ** 3)),
         "Disk in use": "{:.2f}%".format(psu.disk_usage('/').percent),
         "Disk free": "{:.2f}GiB".format(psu.disk_usage('/').free / (1024 ** 3)),
