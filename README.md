@@ -9,13 +9,17 @@ conda activate stack
 ```
 
 ## Run Spark
+Please make sure you are running the script from the **correct directory**!
 ```
-python pyspark/run_pipeline.py
+cd pyspark
+python run_pipeline.py
 ```
 
 ## Run Dask
+Please make sure you are running the script from the **correct directory**!
 ```
-python pyspark/run.py
+cd dask
+python run.py
 ```
 
 ### Authors

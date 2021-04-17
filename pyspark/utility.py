@@ -1,6 +1,7 @@
 from time import time
 from datetime import timedelta, datetime
 from sys import argv
+from os import path
 import psutil as psu
 import csv, os
 import json
@@ -51,6 +52,18 @@ def process_info():
 
     return processes_info
 
+def create_files():
+    if os.path.exists("system_info.json"):
+        os.remove("system_info.json")
+
+    if os.path.exists("processes_info.json"):
+        os.remove("processes_info.json")
+
+    with open("system_info.json", "w") as f:
+        f.write("{}")
+
+    with open("processes_info.json", "w") as a:
+        a.close()
 
 # decorator
 def metrics(fun):

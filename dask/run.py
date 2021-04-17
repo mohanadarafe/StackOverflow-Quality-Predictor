@@ -1,3 +1,7 @@
+import os
+from os import path
+assert os.path.basename(os.getcwd()) == "dask", "Please run the program from the dask directory!"
+
 import dask.dataframe as dd
 import dask.bag as db
 import dask.array as da
@@ -7,7 +11,6 @@ from dask_ml.wrappers import ParallelPostFit
 from dask_ml.naive_bayes import GaussianNB
 import pandas as pd
 import csv, sys, multiprocessing
-from os import path
 from nltk import word_tokenize
 sys.path.append('../pyspark')
 from utility import *
@@ -106,6 +109,8 @@ def train_model(x_train, y_train):
     clf = ParallelPostFit(estimator = GaussianNB(), scoring='accuracy')
     clf.fit(x_train, y_train)
     return clf
+
+create_files()
 
 print("###############LOADING DATA###############")
 train_df, test_df = load_data(filename_train, filename_test)
