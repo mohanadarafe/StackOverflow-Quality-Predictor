@@ -52,6 +52,7 @@ def process_info():
 
     return processes_info
 
+
 def create_files():
     if os.path.exists("system_info.json"):
         os.remove("system_info.json")
@@ -64,6 +65,7 @@ def create_files():
 
     with open("processes_info.json", "w") as a:
         a.close()
+
 
 # decorator
 def metrics(fun):
@@ -87,27 +89,3 @@ def metrics(fun):
         return rv
 
     return wrapper
-
-# spark = init_spark()
-# filename_train = "../dataset/train.csv"
-# filename_test = "../dataset/valid.csv"
-# stop_word_file = "../dataset/stop_words.txt"
-# train_rdd, test_rdd = load_train_test_rdd(filename_train, filename_test)
-# train_df, test_df = transform_rdd_to_df(train_rdd,test_rdd)
-# regexTokenizer, stopwordsRemover = get_heuristics(stop_word_file)
-# countVectors_h1, indexed_features_h1 = get_bag_of_word_model("words", "Output")
-# countVectors_h2, indexed_features_h2 = get_bag_of_word_model("filtered", "Output")
-# pipeline = get_pipeline(regexTokenizer, stopwordsRemover, countVectors_h2, indexed_features_h2)
-
-# model_pipeline = get_pipeline_model(pipeline, train_df)
-# train = transform_data_through_pipeline(model_pipeline, train_df)
-# test = transform_data_through_pipeline(model_pipeline, test_df)
-
-# cv = get_best_smoothing_values("label", "prediction")
-# nb_model = train_naive_bayes_model(cv,train)
-# predictions = predict(nb_model, test)
-
-# evaluate_model("label", "prediction",predictions.select("label","prediction"))
-
-# system_info()
-# process_info()

@@ -16,8 +16,8 @@ def init_spark():
     global spark
     spark = SparkSession \
         .builder \
-        .appName("Python Spark SQL basic example") \
-        .config("spark.some.config.option", "some-value") \
+        .appName("Spark Project") \
+        .master("local[*]")\
         .getOrCreate()
     return spark
 
@@ -92,7 +92,7 @@ def split_dataset(data, distribution):
 
 
 def hypertune(target_col, prediction_col):
-    """get_best_smoothing_values"""
+    """get best smoothing values"""
     # Create grid to find best smoothing
     nb = NaiveBayes(smoothing=1.0, modelType="multinomial")
     paramGrid = ParamGridBuilder().addGrid(nb.smoothing, [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]).build()
@@ -187,9 +187,6 @@ def main_spark():
     print("####### Evaluate predictions #######")
     print("#####################################")
     evaluate("label", "prediction",predictions.select("label","prediction"))
-    # print('\n\n(((((((((((((PROCESSES)))))))))))))))')
-    # process_info()
-    # print('((((((((((((((((())))))))))))))))))))')
 
 
 
